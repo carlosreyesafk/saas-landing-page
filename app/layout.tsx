@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import JsonLd from "@/components/JsonLd";
 
 const SITE_URL = "https://saas-landing-page-olive-iota.vercel.app";
 const SITE_NAME = "Spendly";
@@ -55,6 +56,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <JsonLd />
+      </head>
       <body className="bg-white font-sans text-slate-900 antialiased">
         {children}
       </body>

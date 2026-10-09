@@ -15,7 +15,10 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur">
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <nav
+        aria-label="Main navigation"
+        className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
+      >
         <a href="#" className="flex items-center gap-2">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-white">
             <Wallet className="h-5 w-5" />
@@ -55,7 +58,9 @@ export default function Navbar() {
         <button
           className="rounded-lg p-2 text-slate-600 hover:bg-slate-100 md:hidden"
           onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
@@ -63,7 +68,10 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-slate-200 bg-white px-4 py-4 md:hidden">
+        <div
+          id="mobile-menu"
+          className="border-t border-slate-200 bg-white px-4 py-4 md:hidden"
+        >
           <div className="flex flex-col gap-3">
             {links.map((link) => (
               <a

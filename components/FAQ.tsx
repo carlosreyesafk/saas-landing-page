@@ -54,20 +54,29 @@ export default function FAQ() {
             return (
               <div key={faq.question}>
                 <button
+                  id={`faq-button-${index}`}
                   onClick={() => setOpenIndex(open ? null : index)}
                   className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
                   aria-expanded={open}
+                  aria-controls={`faq-panel-${index}`}
                 >
                   <span className="font-semibold text-slate-900">
                     {faq.question}
                   </span>
                   <ChevronDown
+                    aria-hidden="true"
                     className={`h-5 w-5 shrink-0 text-slate-500 transition-transform ${open ? "rotate-180" : ""}`}
                   />
                 </button>
-                {open && (
-                  <p className="px-6 pb-6 text-slate-600">{faq.answer}</p>
-                )}
+                <div
+                  id={`faq-panel-${index}`}
+                  role="region"
+                  aria-labelledby={`faq-button-${index}`}
+                  hidden={!open}
+                  className="px-6 pb-6"
+                >
+                  <p className="text-slate-600">{faq.answer}</p>
+                </div>
               </div>
             );
           })}

@@ -13,3 +13,49 @@ html {
   background-color: #4f46e5;
   color: #fff;
 }
+
+/* Animated logo marquee (LogoStrip) */
+@keyframes logo-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-marquee-track {
+  animation: logo-marquee 32s linear infinite;
+}
+
+.logo-marquee:hover .logo-marquee-track {
+  animation-play-state: paused;
+}
+
+/* Soft fade on both edges so logos slide in/out gracefully */
+.logo-marquee::before,
+.logo-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 6rem;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.logo-marquee::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.logo-marquee::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee-track {
+    animation: none;
+  }
+}

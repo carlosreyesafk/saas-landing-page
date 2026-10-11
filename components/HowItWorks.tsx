@@ -27,7 +27,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="bg-slate-50 py-20 sm:py-28">
+    <section id="how-it-works" className="bg-slate-50 py-20 sm:py-28 dark:bg-slate-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="How it works"
@@ -39,21 +39,21 @@ export default function HowItWorks() {
             <div key={item.title} className="relative">
               {index < steps.length - 1 && (
                 <div
-                  className="absolute left-1/2 top-8 hidden h-0.5 w-full bg-indigo-200 md:block"
+                  className="absolute left-1/2 top-8 hidden h-0.5 w-full bg-indigo-200 md:block dark:bg-indigo-800"
                   aria-hidden="true"
                 />
               )}
-              <div className="relative rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm">
+              <div className="relative rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm dark:border-slate-800 dark:bg-slate-950">
                 <span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-600 text-white shadow-lg shadow-indigo-600/25">
                   <item.icon className="h-8 w-8" />
                 </span>
-                <p className="mt-5 text-sm font-semibold uppercase tracking-widest text-indigo-600">
+                <p className="mt-5 text-sm font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
                   {item.step}
                 </p>
-                <h3 className="mt-2 text-xl font-bold text-slate-900">
+                <h3 className="mt-2 text-xl font-bold text-slate-900 dark:text-slate-100">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-slate-600">{item.description}</p>
+                <p className="mt-3 text-slate-600 dark:text-slate-400">{item.description}</p>
               </div>
             </div>
           ))}

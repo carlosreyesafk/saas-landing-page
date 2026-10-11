@@ -55,11 +55,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('spendly-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})();`,
+          }}
+        />
         <JsonLd />
       </head>
-      <body className="bg-white font-sans text-slate-900 antialiased">
+      <body className="bg-white font-sans text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
         {children}
       </body>
     </html>

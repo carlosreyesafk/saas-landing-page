@@ -32,7 +32,7 @@ function LogoList({ ariaHidden = false }: { ariaHidden?: boolean }) {
       {companies.map(({ name, icon: Icon }) => (
         <span
           key={name}
-          className="flex shrink-0 items-center gap-2 text-slate-400 transition-colors duration-200 hover:text-slate-600"
+          className="flex shrink-0 items-center gap-2 text-slate-400 transition-colors duration-200 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300"
         >
           <Icon className="h-5 w-5" aria-hidden="true" />
           <span className="whitespace-nowrap text-lg font-bold tracking-tight">
@@ -47,11 +47,11 @@ function LogoList({ ariaHidden = false }: { ariaHidden?: boolean }) {
 export default function LogoStrip() {
   return (
     <section
-      className="border-y border-slate-200/70 bg-white py-10"
+      className="border-y border-slate-200/70 bg-white py-10 dark:border-slate-800 dark:bg-slate-950"
       aria-label="Companies that trust this product"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-xs font-semibold uppercase tracking-widest text-slate-400">
+        <p className="text-center text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500">
           Trusted by freelancers and studios at
         </p>
       </div>

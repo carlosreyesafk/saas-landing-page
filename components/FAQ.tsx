@@ -41,14 +41,14 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-white py-20 sm:py-28">
+    <section id="faq" className="bg-white py-20 sm:py-28 dark:bg-slate-950">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="FAQ"
           title="Questions, answered"
           description="Everything freelancers usually ask before starting their trial."
         />
-        <div className="mt-12 divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <div className="mt-12 divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white shadow-sm dark:divide-slate-800 dark:border-slate-800 dark:bg-slate-950">
           {faqs.map((faq, index) => {
             const open = openIndex === index;
             return (
@@ -60,12 +60,12 @@ export default function FAQ() {
                   aria-expanded={open}
                   aria-controls={`faq-panel-${index}`}
                 >
-                  <span className="font-semibold text-slate-900">
+                  <span className="font-semibold text-slate-900 dark:text-slate-100">
                     {faq.question}
                   </span>
                   <ChevronDown
                     aria-hidden="true"
-                    className={`h-5 w-5 shrink-0 text-slate-500 transition-transform ${open ? "rotate-180" : ""}`}
+                    className={`h-5 w-5 shrink-0 text-slate-500 transition-transform dark:text-slate-400 ${open ? "rotate-180" : ""}`}
                   />
                 </button>
                 <div
@@ -75,7 +75,7 @@ export default function FAQ() {
                   hidden={!open}
                   className="px-6 pb-6"
                 >
-                  <p className="text-slate-600">{faq.answer}</p>
+                  <p className="text-slate-600 dark:text-slate-400">{faq.answer}</p>
                 </div>
               </div>
             );

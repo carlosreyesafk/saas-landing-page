@@ -49,7 +49,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="bg-white py-20 sm:py-28">
+    <section id="features" className="bg-white py-20 sm:py-28 dark:bg-slate-950">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Features"
@@ -60,15 +60,15 @@ export default function Features() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+              className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950"
             >
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-100 text-indigo-600">
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-100 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400">
                 <feature.icon className="h-6 w-6" />
               </span>
-              <h3 className="mt-4 text-lg font-semibold text-slate-900">
+              <h3 className="mt-4 text-lg font-semibold text-slate-900 dark:text-slate-100">
                 {feature.title}
               </h3>
-              <p className="mt-2 text-slate-600">{feature.description}</p>
+              <p className="mt-2 text-slate-600 dark:text-slate-400">{feature.description}</p>
             </div>
           ))}
         </div>

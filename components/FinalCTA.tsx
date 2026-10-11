@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function FinalCTA() {
   return (
-    <section id="cta" className="bg-white px-4 pb-20 sm:px-6 sm:pb-28 lg:px-8">
+    <section id="cta" className="bg-white px-4 pb-20 sm:px-6 sm:pb-28 lg:px-8 dark:bg-slate-950">
       <div className="mx-auto max-w-7xl overflow-hidden rounded-3xl bg-indigo-600 px-6 py-16 text-center shadow-2xl shadow-indigo-600/25 sm:px-12 sm:py-20">
         <h2 className="mx-auto max-w-2xl text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
           Stop guessing. Start knowing where your money goes.

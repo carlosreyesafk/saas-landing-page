@@ -21,7 +21,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-5">
           <div className="md:col-span-2">
-            <a href="#" className="flex items-center gap-2">
+            <a href="/" className="flex items-center gap-2">
               <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-white">
                 <Wallet className="h-5 w-5" />
               </span>
@@ -59,7 +59,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Spendly Inc. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
-            <a href="#" className="transition hover:text-white">
+            <a href="/privacy" className="transition hover:text-white">
               Privacy
             </a>
             <a href="#" className="transition hover:text-white">

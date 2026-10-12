@@ -2,8 +2,6 @@
 
 A complete, production-quality SaaS landing page built with **Next.js 15 (App Router) + TypeScript + Tailwind CSS v4**. It presents a fictional expense-tracking product ("Spendly") with realistic copy — no lorem ipsum.
 
-> **Live Demo:** [saas-landing-page-olive-iota.vercel.app](https://saas-landing-page-olive-iota.vercel.app)
-
 > Screenshots: add `screenshots/desktop.png` and `screenshots/mobile.png` here after deploying.
 
 ## What it demonstrates

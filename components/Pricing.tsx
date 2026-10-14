@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Check } from "lucide-react";
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 
 type Tier = {
   name: string;
@@ -66,11 +67,13 @@ export default function Pricing() {
   return (
     <section id="pricing" className="bg-white py-20 sm:py-28 dark:bg-slate-950">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="Pricing"
-          title="Simple pricing that pays for itself"
-          description="One recovered tax deduction usually covers a full year of Spendly."
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="Pricing"
+            title="Simple pricing that pays for itself"
+            description="One recovered tax deduction usually covers a full year of Spendly."
+          />
+        </Reveal>
 
         {/* Billing toggle */}
         <div className="mt-8 flex items-center justify-center gap-3">
@@ -101,11 +104,11 @@ export default function Pricing() {
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {tiers.map((tier) => {
+          {tiers.map((tier, i) => {
             const price = yearly ? tier.yearly : tier.monthly;
             return (
+              <Reveal key={tier.name} delay={i * 100}>
               <div
-                key={tier.name}
                 className={`relative rounded-2xl border p-8 ${
                   tier.featured
                     ? "border-indigo-600 bg-indigo-50/50 shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-600 dark:bg-indigo-950/40"
@@ -150,6 +153,7 @@ export default function Pricing() {
                   ))}
                 </ul>
               </div>
+              </Reveal>
             );
           })}
         </div>

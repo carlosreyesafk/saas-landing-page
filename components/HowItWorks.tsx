@@ -1,5 +1,6 @@
 import { Camera, Link2, PieChart } from "lucide-react";
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 
 const steps = [
   {
@@ -29,14 +30,17 @@ export default function HowItWorks() {
   return (
     <section id="how-it-works" className="bg-slate-50 py-20 sm:py-28 dark:bg-slate-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="How it works"
-          title="Up and running in minutes, not days"
-          description="No onboarding calls, no spreadsheets to migrate. Just connect and go."
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="How it works"
+            title="Up and running in minutes, not days"
+            description="No onboarding calls, no spreadsheets to migrate. Just connect and go."
+          />
+        </Reveal>
         <div className="mt-14 grid gap-8 md:grid-cols-3">
           {steps.map((item, index) => (
-            <div key={item.title} className="relative">
+            <Reveal key={item.title} delay={index * 120}>
+            <div className="relative">
               {index < steps.length - 1 && (
                 <div
                   className="absolute left-1/2 top-8 hidden h-0.5 w-full bg-indigo-200 md:block dark:bg-indigo-800"
@@ -56,6 +60,7 @@ export default function HowItWorks() {
                 <p className="mt-3 text-slate-600 dark:text-slate-400">{item.description}</p>
               </div>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>

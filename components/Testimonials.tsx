@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 
 const testimonials = [
   {
@@ -29,15 +30,17 @@ export default function Testimonials() {
   return (
     <section className="bg-slate-50 py-20 sm:py-28 dark:bg-slate-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="Testimonials"
-          title="Loved by freelancers everywhere"
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="Testimonials"
+            title="Loved by freelancers everywhere"
+          />
+        </Reveal>
         <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {testimonials.map((t) => (
+          {testimonials.map((t, i) => (
+            <Reveal key={t.name} delay={i * 100}>
             <figure
-              key={t.name}
-              className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-950"
+              className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-950"
             >
               <div className="flex gap-1" aria-label="5 out of 5 stars">
                 {Array.from({ length: 5 }).map((_, i) => (
@@ -62,6 +65,7 @@ export default function Testimonials() {
                 </span>
               </figcaption>
             </figure>
+            </Reveal>
           ))}
         </div>
       </div>

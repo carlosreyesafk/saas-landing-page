@@ -7,6 +7,7 @@ import {
   Tags,
 } from "lucide-react";
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 
 const features = [
   {
@@ -51,15 +52,17 @@ export default function Features() {
   return (
     <section id="features" className="bg-white py-20 sm:py-28 dark:bg-slate-950">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="Features"
-          title="Everything you need to master your money"
-          description="Built for freelancers who would rather be working than doing bookkeeping."
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="Features"
+            title="Everything you need to master your money"
+            description="Built for freelancers who would rather be working than doing bookkeeping."
+          />
+        </Reveal>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature) => (
+          {features.map((feature, i) => (
+            <Reveal key={feature.title} delay={i * 90}>
             <div
-              key={feature.title}
               className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950"
             >
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-100 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400">
@@ -70,6 +73,7 @@ export default function Features() {
               </h3>
               <p className="mt-2 text-slate-600 dark:text-slate-400">{feature.description}</p>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>

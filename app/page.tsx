@@ -8,20 +8,27 @@ import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import Reveal from "@/components/Reveal";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <main>
-        <Hero />
-        <LogoStrip />
+        <Reveal>
+          <Hero />
+        </Reveal>
+        <Reveal>
+          <LogoStrip />
+        </Reveal>
         <Features />
         <HowItWorks />
         <Pricing />
         <Testimonials />
         <FAQ />
-        <FinalCTA />
+        <Reveal>
+          <FinalCTA />
+        </Reveal>
       </main>
       <Footer />
     </>

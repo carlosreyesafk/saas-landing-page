@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 
 const faqs = [
   {
@@ -43,11 +44,14 @@ export default function FAQ() {
   return (
     <section id="faq" className="bg-white py-20 sm:py-28 dark:bg-slate-950">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="FAQ"
-          title="Questions, answered"
-          description="Everything freelancers usually ask before starting their trial."
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="FAQ"
+            title="Questions, answered"
+            description="Everything freelancers usually ask before starting their trial."
+          />
+        </Reveal>
+        <Reveal delay={100}>
         <div className="mt-12 divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white shadow-sm dark:divide-slate-800 dark:border-slate-800 dark:bg-slate-950">
           {faqs.map((faq, index) => {
             const open = openIndex === index;
@@ -81,6 +85,7 @@ export default function FAQ() {
             );
           })}
         </div>
+        </Reveal>
       </div>
     </section>
   );
